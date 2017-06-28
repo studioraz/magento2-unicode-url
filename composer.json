@@ -11,7 +11,7 @@
   "autoload": {
     "files": [ "registration.php" ],
     "psr-4": {
-      "SR\\CategoryImage\\": ""
+      "SR\\UnicodeUrl\\": ""
     }
   },
   "support": {
