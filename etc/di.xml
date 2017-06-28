@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Filter\FilterManager\Config">
+        <arguments>
+            <argument name="factories" xsi:type="array">
+                <item xsi:type="string" name="judaica_factory">\SR\UnicodeUrl\Filter\Factory</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Catalog\Model\Product\Url">
+        <plugin name="sr_unicodeurl_product_url" type="SR\UnicodeUrl\Plugin\Product\Url"/>
+    </type>
+
+    <type name="Magento\Catalog\Model\Category">
+        <plugin name="sr_unicodeurl_catalog_magento_catalog_model_category" type="SR\UnicodeUrl\Plugin\Model\Category"/>
+    </type>
+
+    <type name="Magento\Store\App\Request\PathInfoProcessor">
+        <plugin name="sr_unicodeurl_request_path_info_processor"
+                type="SR\UnicodeUrl\Plugin\MagentoStore\App\Request\PathInfoProcessor"/>
+    </type>
+
+</config>
