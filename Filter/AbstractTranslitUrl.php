@@ -40,7 +40,7 @@ class AbstractTranslitUrl implements \Zend_Filter_Interface
             if (function_exists('mb_strtolower')) {
                 $urlKey = mb_strtolower($urlKey, 'UTF-8');
             }
-            $urlKey = $this->utf8UriEncode($urlKey, 200);
+            $urlKey = $this->utf8UriEncode($urlKey);
         }
 
         $urlKey = strtolower($urlKey);
