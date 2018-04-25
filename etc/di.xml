@@ -4,7 +4,7 @@
     <type name="Magento\Framework\Filter\FilterManager\Config">
         <arguments>
             <argument name="factories" xsi:type="array">
-                <item xsi:type="string" name="judaica_factory">\SR\UnicodeUrl\Filter\Factory</item>
+                <item xsi:type="string" name="sr_unicodeurl_filter_factory">\SR\UnicodeUrl\Filter\Factory</item>
             </argument>
         </arguments>
     </type>
