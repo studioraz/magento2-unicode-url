@@ -1,4 +1,4 @@
-# StudioRaz Unicode URL 
+# Studio Raz Unicode URL 
 Magento 2 module to save UTF-8 characheters  allowing categories and products UTF-8 URL keys
 
 ## Installation
