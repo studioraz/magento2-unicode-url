@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
+<!--
+  ~ Copyright © 2020 Studio Raz. All rights reserved.
+  ~ See LICENSE.txt for license details.
+  -->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Framework\Filter\FilterManager\Config">
@@ -21,5 +26,6 @@
         <plugin name="sr_unicodeurl_request_path_info_processor"
                 type="SR\UnicodeUrl\Plugin\MagentoStore\App\Request\PathInfoProcessor"/>
     </type>
-
+    <preference for="Magento\Cms\Model\ResourceModel\Page"
+                type="SR\UnicodeUrl\Plugin\Model\ResourceModel\PagePlugin"/>
 </config>
