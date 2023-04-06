@@ -9,7 +9,7 @@
 
 namespace SR\UnicodeUrl\Filter;
 
-class AbstractTranslitUrl implements \Zend_Filter_Interface
+class AbstractTranslitUrl implements \Laminas\Filter\FilterInterface
 {
 
     public function filter($value)
