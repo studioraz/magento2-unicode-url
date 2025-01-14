@@ -2,18 +2,20 @@
 
 namespace SR\UnicodeUrl\Plugin\Model;
 
+use Magento\Framework\Filter\FilterManager;
+
 class Category
 {
     public function __construct(
-        \Magento\Framework\Filter\FilterManager $filter
+        private FilterManager $filter
     ) {
-        $this->filter = $filter;
+
     }
 
     public function aroundFormatUrlKey(
         \Magento\Catalog\Model\Category $subject,
         callable $proceed,
-        $str
+                                        $str
     ) {
         return $this->filter->translitUrlCategory($str);
     }

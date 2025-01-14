@@ -2,19 +2,21 @@
 
 namespace SR\UnicodeUrl\Plugin\Product;
 
+use Magento\Framework\Filter\FilterManager;
+
 class Url
 {
     public function __construct(
-        \Magento\Framework\Filter\FilterManager $filter
+        private FilterManager $filter
     )
     {
-        $this->filter = $filter;
+
     }
 
     public function aroundFormatUrlKey(
         \Magento\Catalog\Model\Product\Url $subject,
         callable $proceed,
-        $str
+                                           $str
     ) {
         return $this->filter->translitUrlProduct($str);
     }
