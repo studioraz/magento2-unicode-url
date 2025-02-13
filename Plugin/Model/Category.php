@@ -3,7 +3,6 @@
 namespace SR\UnicodeUrl\Plugin\Model;
 
 use Magento\Framework\Filter\FilterManager;
-use Magento\Catalog\Model\Category;
 
 class Category
 {
@@ -23,7 +22,7 @@ class Category
      * @return string
      */
     public function aroundFormatUrlKey(
-        Category $subject,
+        \Magento\Catalog\Model\Category $subject,
         callable $proceed,
         string $str
     ): string {
