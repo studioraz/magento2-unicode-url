@@ -3,21 +3,30 @@
 namespace SR\UnicodeUrl\Plugin\Product;
 
 use Magento\Framework\Filter\FilterManager;
+use Magento\Catalog\Model\Product\Url as ProductUrl;
 
 class Url
 {
-    public function __construct(
-        private FilterManager $filter
-    )
-    {
+    private FilterManager $filter;
 
+    public function __construct(FilterManager $filter)
+    {
+        $this->filter = $filter;
     }
 
+    /**
+     * Plugin per modificare il metodo formatUrlKey nel prodotto
+     *
+     * @param ProductUrl $subject
+     * @param callable $proceed
+     * @param string $str
+     * @return string
+     */
     public function aroundFormatUrlKey(
-        \Magento\Catalog\Model\Product\Url $subject,
+        ProductUrl $subject,
         callable $proceed,
-                                           $str
-    ) {
+        string $str
+    ): string {
         return $this->filter->translitUrlProduct($str);
     }
 }
