@@ -19,14 +19,18 @@ class Url
      *
      * @param ProductUrl $subject
      * @param callable $proceed
-     * @param string $str
+     * @param string|null $str
      * @return string
      */
     public function aroundFormatUrlKey(
         ProductUrl $subject,
         callable $proceed,
-        string $str
+        ?string $str = null
     ): string {
+        if ($str === null || trim($str) === '') {
+            return ''; // Oppure un valore predefinito, come 'default-url-key'
+        }
+
         return $this->filter->translitUrlProduct($str);
     }
 }
