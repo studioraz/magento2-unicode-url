@@ -6,6 +6,8 @@ use Magento\Framework\Filter\FilterManager;
 
 class Url
 {
+    private $filter; // https://php.watch/versions/8.2/dynamic-properties-deprecated
+    
     public function __construct(
         private FilterManager $filter
     )
