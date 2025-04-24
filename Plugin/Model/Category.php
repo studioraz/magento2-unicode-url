@@ -6,17 +6,26 @@ use Magento\Framework\Filter\FilterManager;
 
 class Category
 {
-    public function __construct(
-        private FilterManager $filter
-    ) {
+    private FilterManager $filter;
 
+    public function __construct(FilterManager $filter)
+    {
+        $this->filter = $filter;
     }
 
+    /**
+     * Plugin per modificare il metodo formatUrlKey nella categoria
+     *
+     * @param Category $subject
+     * @param callable $proceed
+     * @param string $str
+     * @return string
+     */
     public function aroundFormatUrlKey(
         \Magento\Catalog\Model\Category $subject,
         callable $proceed,
-                                        $str
-    ) {
+        string $str
+    ): string {
         return $this->filter->translitUrlCategory($str);
     }
 }
